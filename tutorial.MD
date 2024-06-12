@@ -148,3 +148,34 @@ function removeItem(item) {
     -   **const filteredItems = items.filter(i => i !== item);**: Filtra a lista para remover o item especificado.
     -   **localStorage.setItem('shoppingList', JSON.stringify(filteredItems));**: Converte a lista filtrada para uma string JSON e a salva no `localStorage`.
 
+#### Adicionar Edição
+
+#### `index.html`
+
+```html
+<input type="text" id="desc-input" class="form-control" placeholder="Adicionar descrição">
+```
+
+-   Adiciona um novo campo de entrada para a descrição do item.
+
+#### `app.js`
+
+1.  **loadItems()**
+    
+    -   Carrega itens da `localStorage` e adiciona cada um ao DOM.
+2.  **addItem()**
+    
+    -   Lê o valor do campo de entrada para o item e para a descrição.
+    -   Cria um objeto `item` contendo `text` e `description`.
+    -   Adiciona o item ao DOM e ao `localStorage`.
+3.  **addItemToDOM(item)**
+    
+    -   Cria elementos de texto e descrição para o item.
+    -   Adiciona um botão "Editar" ao lado de cada item, que permite editar o texto e a descrição.
+    -   Adiciona um botão "Remover" ao lado de cada item para remover o item da lista e do `localStorage`.
+4.  **updateItem(updatedItem)**
+    
+    -   Atualiza o item no `localStorage`.
+5.  **removeItem(item)**
+    
+    -   Remove o item do `localStorage`.
